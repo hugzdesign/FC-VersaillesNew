@@ -1,0 +1,255 @@
+.staff-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-white);
+  color: var(--color-primary-dark);
+}
+
+.staff-hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.staff-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+.staff-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.staff-title-image {
+  width: auto;
+  height: clamp(300px, 60vh, 700px);
+  max-width: 95%;
+  filter: drop-shadow(0 2px 20px rgba(0, 0, 0, 0.5));
+  object-fit: contain;
+}
+
+/* Section featured staff (3 photos côte à côte) */
+.staff-featured-section {
+  width: 100%;
+  padding: 0;
+  background-color: var(--color-white);
+}
+
+.staff-featured-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.staff-featured-item {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.staff-featured-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.staff-featured-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-slow);
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.staff-featured-item:hover .staff-featured-photo {
+  transform: scale(1.1);
+}
+
+.staff-featured-text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  padding: var(--spacing-md);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.staff-featured-item:hover .staff-featured-text-overlay {
+  opacity: 1;
+}
+
+.staff-featured-text {
+  max-width: 90%;
+  max-height: 90%;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 20px rgba(0, 0, 0, 0.5));
+}
+
+.staff-visual-section {
+  padding: var(--spacing-lg) 0;
+  background-color: var(--color-white);
+}
+
+.staff-group-image {
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.staff-group-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.staff-grid-section {
+  padding: var(--spacing-lg) 0;
+  background-color: var(--color-white);
+}
+
+.staff-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) 0;
+}
+
+.staff-card-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.staff-card-wide {
+  grid-column: span 2;
+}
+
+.staff-visual-gallery {
+  padding: var(--spacing-lg) 0;
+  background-color: var(--color-primary-light);
+}
+
+.staff-gallery-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-md);
+  height: 600px;
+}
+
+.staff-gallery-item {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.staff-gallery-large {
+  grid-row: 1 / 3;
+}
+
+.staff-gallery-small {
+  height: calc(50% - var(--spacing-md) / 2);
+}
+
+.staff-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-slow);
+}
+
+.staff-gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 968px) {
+  .staff-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .staff-card-large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .staff-hero {
+    height: 40vh;
+    min-height: 300px;
+  }
+
+  .staff-featured-container {
+    grid-template-columns: 1fr;
+  }
+
+  .staff-featured-item {
+    height: 100vh;
+  }
+  
+  .staff-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+  
+  .staff-card-large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  
+  .staff-card-wide {
+    grid-column: span 1;
+  }
+}
+

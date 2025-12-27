@@ -1,0 +1,235 @@
+.section-preview {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  background-color: var(--color-white);
+  cursor: pointer;
+}
+
+.section-preview-content {
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.section-preview-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  z-index: 3;
+  padding: var(--spacing-md);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.section-preview-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.1;
+  margin: 0;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.section-preview-title-image {
+  max-width: 80%;
+  height: auto;
+  max-height: 150px;
+  margin: 0 auto var(--spacing-sm);
+  filter: drop-shadow(0 2px 20px rgba(0, 0, 0, 0.5));
+  object-fit: contain;
+}
+
+.club-preview-title-image,
+.effectif-preview-title-image,
+.shop-preview-title-image,
+.association-preview-title-image,
+.partenariats-preview-title-image {
+  width: 85%;
+  max-width: 700px;
+  height: auto;
+  min-height: 400px;
+  filter: drop-shadow(0 2px 20px rgba(0, 0, 0, 0.5));
+  object-fit: contain;
+  margin-bottom: var(--spacing-sm);
+}
+
+.club-preview .section-preview-text,
+.effectif-preview .section-preview-text,
+.merchandising-preview .section-preview-text,
+.academie-preview .section-preview-text,
+.partenariats-preview .section-preview-text {
+  justify-content: flex-start;
+  padding-top: 20%;
+  gap: var(--spacing-xs);
+}
+
+.club-preview .section-preview-description,
+.effectif-preview .section-preview-description,
+.merchandising-preview .section-preview-description,
+.academie-preview .section-preview-description,
+.partenariats-preview .section-preview-description {
+  margin: 0;
+  margin-top: 0;
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+}
+
+.club-preview .section-preview-button,
+.effectif-preview .section-preview-button,
+.merchandising-preview .section-preview-button,
+.academie-preview .section-preview-button,
+.partenariats-preview .section-preview-button {
+  margin-top: var(--spacing-xs);
+}
+
+.section-preview-description {
+  font-size: clamp(1rem, 1.8vw, 1.4rem);
+  line-height: 1.6;
+  color: var(--color-white);
+  max-width: 500px;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  font-weight: 300;
+}
+
+.section-preview-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-white);
+  background: transparent;
+  border: 2px solid var(--color-gold);
+  border-radius: 0;
+  transition: all var(--transition-base);
+  margin-top: var(--spacing-sm);
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.section-preview-button:hover {
+  background: var(--color-gold);
+  color: var(--color-black);
+  border-color: var(--color-gold);
+}
+
+.button-arrow {
+  font-size: 1.2em;
+  transition: transform var(--transition-base);
+}
+
+.section-preview-button:hover .button-arrow {
+  transform: translateX(5px);
+}
+
+.section-preview-image {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.section-preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-slow);
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.section-preview:hover .section-preview-image img {
+  transform: scale(1.1);
+}
+
+.section-preview:hover .section-preview-text {
+  opacity: 1;
+}
+
+/* Variantes pour différentes sections - fonds blanc/bleu */
+.effectif-preview {
+  background: var(--color-white);
+}
+
+.staff-preview {
+  background: var(--color-primary-light);
+}
+
+.academie-preview {
+  background: var(--color-primary);
+}
+
+.merchandising-preview {
+  background: var(--color-white);
+}
+
+.classement-preview {
+  background: var(--color-primary-light);
+}
+
+.calendrier-preview {
+  background: var(--color-white);
+}
+
+.billetterie-preview {
+  background: var(--color-primary);
+}
+
+.national1-preview {
+  background: var(--color-white);
+}
+
+.partenariats-preview {
+  background: var(--color-white);
+}
+
+@media (max-width: 968px) {
+  .section-preview-text {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .section-preview-image {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-preview {
+    min-height: 70vh;
+  }
+  
+  .section-preview-image {
+    height: 70vh;
+  }
+  
+  .section-preview-text {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+

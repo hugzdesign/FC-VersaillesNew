@@ -1,0 +1,180 @@
+.administration-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-white);
+  color: var(--color-primary-dark);
+}
+
+.administration-hero {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-light) 100%
+  );
+  overflow: hidden;
+}
+
+.administration-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/Autres photos/C\'EST LA 𝐅𝐇𝐎𝐋𝐘𝐘𝐘𝐘 ! ❤️‍🔥Le FC Versailles et HOLY, la marque berlinoise de boissons natu.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.administration-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+.administration-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.administration-subtitle {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.administration-content {
+  padding: var(--spacing-lg) 0;
+  background-color: var(--color-white);
+}
+
+.administration-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.administration-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.administration-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-md);
+}
+
+.administration-section-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-primary);
+  margin: 0;
+  opacity: 0.9;
+}
+
+.administration-image-content {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.administration-image-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-slow);
+}
+
+.administration-section:hover .administration-image-content img {
+  transform: scale(1.05);
+}
+
+.administration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.administration-card {
+  padding: var(--spacing-lg);
+  background-color: var(--color-white);
+  border: 1px solid rgba(0, 51, 102, 0.1);
+  transition: all var(--transition-base);
+}
+
+.administration-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 51, 102, 0.15);
+}
+
+.administration-card-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  margin-bottom: var(--spacing-sm);
+}
+
+.administration-card-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-gray-lighter);
+  margin: 0;
+}
+
+@media (max-width: 968px) {
+  .administration-section {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .administration-image-content {
+    height: 400px;
+    order: -1;
+  }
+  
+  .administration-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .administration-hero {
+    height: 40vh;
+    min-height: 300px;
+  }
+  
+  .administration-image-content {
+    height: 300px;
+  }
+  
+  .administration-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

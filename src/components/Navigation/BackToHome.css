@@ -1,0 +1,41 @@
+.back-to-home {
+  position: fixed;
+  top: var(--spacing-md);
+  left: var(--spacing-md);
+  z-index: 1000;
+  padding: 0;
+  background: transparent;
+  border: none;
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.back-to-home:hover {
+  transform: scale(1.05);
+}
+
+.back-to-home-image {
+  width: auto;
+  height: auto;
+  max-width: 200px;
+  max-height: 60px;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .back-to-home {
+    top: var(--spacing-xs);
+    left: var(--spacing-xs);
+  }
+  
+  .back-to-home-image {
+    max-width: 150px;
+    max-height: 45px;
+  }
+}
+
+
+
+
+

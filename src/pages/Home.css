@@ -1,0 +1,13 @@
+.home-page {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  margin: 0;
+  padding: 0;
+}
+
+.home-page > * {
+  margin: 0;
+  padding: 0;
+}
+

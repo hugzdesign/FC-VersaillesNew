@@ -1,0 +1,42 @@
+.top-logo {
+  position: fixed;
+  top: var(--spacing-sm);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.top-logo-button {
+  pointer-events: all;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform var(--transition-base);
+}
+
+.top-logo-button:hover {
+  transform: scale(1.05);
+}
+
+.top-logo-image {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+}
+
+@media (max-width: 768px) {
+  .top-logo {
+    top: var(--spacing-xs);
+    left: 50%;
+  }
+  
+  .top-logo-image {
+    height: 90px;
+    width: auto;
+  }
+}
+
+

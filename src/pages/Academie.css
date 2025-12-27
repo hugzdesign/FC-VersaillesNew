@@ -1,0 +1,167 @@
+.academie-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-white);
+  color: var(--color-primary-dark);
+}
+
+.academie-hero {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-light) 100%
+  );
+  overflow: hidden;
+}
+
+.academie-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+.academie-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.academie-subtitle {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.academie-content {
+  padding: var(--spacing-lg) 0;
+  background-color: var(--color-white);
+}
+
+.academie-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+}
+
+.academie-card {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  height: 100%;
+  min-height: 400px;
+}
+
+.academie-card-large {
+  grid-column: span 2;
+  grid-row: span 2;
+  min-height: 600px;
+}
+
+.academie-card-wide {
+  grid-column: span 2;
+}
+
+.academie-card-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.academie-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-slow);
+}
+
+.academie-card:hover .academie-card-image img {
+  transform: scale(1.1);
+}
+
+.academie-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.academie-card:hover .academie-card-overlay {
+  opacity: 1;
+}
+
+.academie-card-content {
+  text-align: center;
+  color: var(--color-white);
+  padding: var(--spacing-md);
+  max-width: 90%;
+}
+
+.academie-card-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+}
+
+.academie-card-subtitle {
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  font-weight: 300;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+@media (max-width: 968px) {
+  .academie-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .academie-card-large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .academie-hero {
+    height: 40vh;
+    min-height: 300px;
+  }
+  
+  .academie-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+  
+  .academie-card-large {
+    grid-column: span 2;
+    grid-row: span 1;
+    min-height: 400px;
+  }
+  
+  .academie-card-wide {
+    grid-column: span 1;
+  }
+}

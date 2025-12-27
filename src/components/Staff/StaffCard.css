@@ -1,0 +1,102 @@
+.staff-card {
+  position: relative;
+  background-color: var(--color-white);
+  border: 1px solid rgba(0, 51, 102, 0.1);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  height: 100%;
+  min-height: 400px;
+  display: block;
+}
+
+.staff-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 40px rgba(0, 51, 102, 0.15);
+  transform: translateY(-5px);
+}
+
+.staff-card-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  overflow: hidden;
+  background-color: var(--color-primary-light);
+}
+
+.staff-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform var(--transition-slow);
+}
+
+.staff-card:hover .staff-card-image {
+  transform: scale(1.1);
+}
+
+.staff-card-text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.staff-card:hover .staff-card-text-overlay {
+  opacity: 1;
+}
+
+.staff-card-text-content {
+  text-align: center;
+  color: var(--color-white);
+  width: 100%;
+  max-width: 90%;
+  padding: var(--spacing-md);
+}
+
+.staff-card-name-overlay {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin: 0 0 var(--spacing-xs) 0;
+  line-height: 1.2;
+}
+
+.staff-card-poste-overlay {
+  font-size: 0.9rem;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  margin: 0;
+}
+
+.staff-card-bio-overlay {
+  font-size: 0.85rem;
+  color: var(--color-white);
+  line-height: 1.6;
+  margin-top: var(--spacing-xs);
+  margin-bottom: 0;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .staff-card-image-container {
+    height: 300px;
+  }
+  
+  .staff-card-name {
+    font-size: 1.2rem;
+  }
+}
+
